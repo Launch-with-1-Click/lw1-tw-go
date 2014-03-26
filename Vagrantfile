@@ -31,9 +31,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.ssh.pty = true
   config.vm.provision :shell, :path => "bootstrap.sh"
-  config.vm.provision :chef_solo do |chef|
-    chef.cookbooks_path = ['site-cookbooks']
-    chef.add_recipe 'lw1_go'
-  end
+#  config.vm.provision :chef_solo do |chef|
+#    chef.cookbooks_path = ['site-cookbooks']
+#    chef.add_recipe 'lw1_go'
+#  end
 
 end
