@@ -1,4 +1,4 @@
-*.swp
+*.sw[a-z]
 env.sh
 env2.sh
 .vagrant/

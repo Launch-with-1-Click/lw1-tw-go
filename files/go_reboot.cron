@@ -1,0 +1,1 @@
+@reboot root /usr/bin/chef-solo -c /opt/lw1/solo.rb -o 'lw1_go::default'
