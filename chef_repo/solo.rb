@@ -1,1 +1,1 @@
-cookbooks_path ['/opt/lw1/cookbooks']
+cookbook_path ['/opt/lw1/cookbooks']
