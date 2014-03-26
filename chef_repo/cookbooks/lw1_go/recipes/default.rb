@@ -22,7 +22,7 @@ admin_pw = '{SHA}' + Base64.encode64(Digest::SHA1.digest(node[:ec2][:instance_id
 file '/etc/go/passwd' do
   owner 'go'
   group 'go'
-  content ['admin', admin_pw].join
+  content ['admin', admin_pw].join(':')
 end
 
 
