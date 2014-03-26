@@ -17,7 +17,7 @@ end
 ## create admin pass
 require 'digest/sha1'
 require 'base64'
-admin_pw = '{SHA}' + Base64.encode64(Digest::SHA1.digest(node[:ec2][:instance_id])).chomp
+admin_pw = '{SHA}' + Base64.encode64(Digest::SHA1.digest(node[:ec2][:instance_id]))
 
 file '/etc/go/passwd' do
   owner 'go'
@@ -32,4 +32,4 @@ end
   end
 end
 
-# include_recipe 'lw1_go::seppuku'
+include_recipe 'lw1_go::seppuku'
