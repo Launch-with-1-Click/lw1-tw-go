@@ -32,8 +32,8 @@ sudo service go-server stop
 sudo chkconfig go-server off
 sudo chkconfig go-agent off
 
-echo "soft nofile 1024" >> /etc/security/limits.conf
-echo "hard nofile 65535" >> /etc/security/limits.conf
+echo "* soft nofile 1024" >> /etc/security/limits.conf
+echo "* hard nofile 65535" >> /etc/security/limits.conf
 echo "export SERVER_MEM=512m" >> /etc/default/go-server
 echo "export SERVER_MAX_MEM=1024m" >> /etc/default/go-server
 
