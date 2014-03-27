@@ -32,4 +32,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.ssh.pty = true
   config.vm.provision :shell, :path => "bootstrap.sh"
 
+  ## Rsync settings
+  ## It doesn't works fine? Todo: read source
+#  config.vm.synced_folder ".", "/vagrant", type: "rsync",
+#    rsync__exclude: ".git/"
+    # rsync__exclude: [".git/", '.DS_Store', '*.swp', '*.swo']
 end

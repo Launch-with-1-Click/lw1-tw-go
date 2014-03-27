@@ -2,6 +2,7 @@
 set -ex
 
 sudo yum update -y
+sudo yum erase -y java-1.6.0-openjdk
 sudo yum install -y git java-1.7.0-openjdk gcc libxml2-devel libxslt-devel httpd-tools
 
 ## Install Chef-Client and nokogiri
@@ -38,6 +39,9 @@ echo "ulimit -n 65535" >> /etc/default/go-server
 echo "ulimit -n 65535" >> /etc/default/go-agent
 
 ## prepare chef_repo
+find /vagrant -name '.DS_Store' -delete
+find /vagrant -name '*.swp' -delete
+find /vagrant -name '*.swo' -delete
 sudo rsync -a /vagrant/chef_repo/ /opt/lw1
 
 ## cron job for 1st boot
