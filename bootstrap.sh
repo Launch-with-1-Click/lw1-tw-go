@@ -13,7 +13,6 @@ echo '{}' > /etc/chef/ohai/hints/ec2.json
 
 
 ## Install Go Packages
-# CHEFSERVER_PKG="chef-server_11.0.11-1.ubuntu.12.04_amd64.deb"
 TW_GO_VERSION='13.4.1'
 TW_GOSERVER_PKG='go-server-13.4.1-18342.noarch.rpm'
 TW_GOAGENT_PKG='go-agent-13.4.1-18342.noarch.rpm'
@@ -32,10 +31,12 @@ sudo service go-server stop
 sudo chkconfig go-server off
 sudo chkconfig go-agent off
 
-echo "* soft nofile 1024" >> /etc/security/limits.conf
-echo "* hard nofile 65535" >> /etc/security/limits.conf
+# echo "* soft nofile 1024" >> /etc/security/limits.conf
+# echo "* hard nofile 65535" >> /etc/security/limits.conf
 echo "export SERVER_MEM=512m" >> /etc/default/go-server
 echo "export SERVER_MAX_MEM=1024m" >> /etc/default/go-server
+echo "ulimit -n 65535" >> /etc/default/go-server
+echo "ulimit -n 65535" >> /etc/default/go-agent
 
 ## prepare chef_repo
 sudo rsync -a /vagrant/chef_repo/ /opt/lw1
