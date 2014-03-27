@@ -31,8 +31,7 @@ sudo service go-server stop
 sudo chkconfig go-server off
 sudo chkconfig go-agent off
 
-# echo "* soft nofile 1024" >> /etc/security/limits.conf
-# echo "* hard nofile 65535" >> /etc/security/limits.conf
+sudo install -o root -g root -m 0644 /vagrant/files/ulimit_go.conf  /etc/security/limits.d/90-thoughtworks-go.conf
 echo "export SERVER_MEM=512m" >> /etc/default/go-server
 echo "export SERVER_MAX_MEM=1024m" >> /etc/default/go-server
 echo "ulimit -n 65535" >> /etc/default/go-server
