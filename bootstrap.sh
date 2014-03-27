@@ -41,4 +41,4 @@ echo "export SERVER_MAX_MEM=1024m" >> /etc/default/go-server
 sudo rsync -a /vagrant/chef_repo/ /opt/lw1
 
 ## cron job for 1st boot
-sudo install -o root -g root -m 0700 /vagrant/files/go_reboot.cron /etc/cron.d/go_reboot
+sudo install -o root -g root -m 0600 /vagrant/files/go_reboot.cron /etc/cron.d/go_reboot
