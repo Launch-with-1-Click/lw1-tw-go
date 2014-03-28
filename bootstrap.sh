@@ -2,7 +2,7 @@
 set -ex
 
 sudo yum update -y
-sudo yum erase -y java-1.6.0-openjdk
+# sudo yum erase -y java-1.6.0-openjdk # default 1.7 since 2014,03
 sudo yum install -y git java-1.7.0-openjdk gcc libxml2-devel libxslt-devel httpd-tools
 
 ## Install Chef-Client and nokogiri
