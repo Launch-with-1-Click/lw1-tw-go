@@ -25,7 +25,6 @@ file '/etc/go/passwd' do
   content ['admin', admin_pw].join(':')
 end
 
-
 %w{go-server go-agent}.each do |svc|
   service svc do
     action [:start, :enable]

@@ -2,12 +2,10 @@
 
 ![Go Login](_images/Go_-_Login.png)
 
-`VERSION: 13.4.1`
+`VERSION: 14.2`
 
 
 `vagrant up --provider=aws`
 
 
-`curl -L clear.ninjax.cc`
-
-<del>`curl https://raw.github.com/Launch-with-1-Click/lw1-tw-go/master/cleanup.sh | bash`</del>
+`packer build packer_ec2.json`

@@ -1,0 +1,55 @@
+{
+  "builders": [
+    {
+      "type": "amazon-ebs",
+      "region": "us-east-1",
+      "source_ami": "ami-08842d60",
+      "instance_type": "c3.2xlarge",
+      "ssh_username": "ec2-user",
+      "ssh_timeout": "10m",
+      "ami_name": "ThoughtWorks Go 14.2 {{timestamp}}"
+    }
+  ],
+
+  "provisioners": [
+    {
+      "type": "shell",
+      "scripts": [
+        "bootstrap.sh"
+      ]
+    },
+    {
+      "type": "file",
+      "source": "files/ulimit_go.conf",
+      "destination": "ulimit_go.conf"
+    },
+    {
+      "type": "shell",
+      "inline": ["sudo install -o root -g root ulimit_go.conf /etc/security/limits.d/90-thoughtworks-go.conf"]
+    },
+    {
+      "type": "file",
+      "source": "files/go_reboot.cron",
+      "destination": "go_reboot"
+    },
+    {
+      "type": "shell",
+      "inline": ["sudo install -m 0644 -o root -g root go_reboot /etc/cron.d/"]
+    },
+    {
+      "type": "file",
+      "source": "chef_repo",
+      "destination": "lw1"
+    },
+    {
+      "type": "shell",
+      "inline": ["sudo mv lw1 /opt/"]
+    },
+    {
+      "type": "shell",
+      "scripts": [
+        "cleanup.sh"
+      ]
+    }
+  ]
+}
