@@ -13,7 +13,7 @@
       "instance_type": "c3.2xlarge",
       "ssh_username": "ec2-user",
       "ssh_timeout": "10m",
-      "ami_name": "ThoughtWorks Go 14.2 Amazon Linux 2014.09.1 {{timestamp}}"
+      "ami_name": "ThoughtWorks Go 14.3 Amazon Linux 2014.09.1 {{timestamp}}"
     }
   ],
 

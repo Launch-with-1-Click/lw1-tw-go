@@ -17,8 +17,8 @@ sudo mv ./ec2.json /etc/chef/ohai/hints/ec2.json
 
 ## Install Go Packages
 TW_GO_VERSION='14.2.0'
-TW_GOSERVER_PKG='go-server-14.2.0-377.noarch.rpm'
-TW_GOAGENT_PKG='go-agent-14.2.0-377.noarch.rpm'
+TW_GOSERVER_PKG='go-server-14.3.0-1186.noarch.rpm'
+TW_GOAGENT_PKG='go-agent-14.3.0-1186.noarch.rpm'
 wget --progress=dot http://download.go.cd/gocd-rpm/${TW_GOSERVER_PKG}
 wget --progress=dot http://download.go.cd/gocd-rpm/${TW_GOAGENT_PKG}
 

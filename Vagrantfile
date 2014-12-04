@@ -17,7 +17,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     aws.region = ENV['AWS_REGION']
     case ENV['AWS_REGION']
     when 'ap-northeast-1'
-      aws.ami = 'ami-08842d60'  # Amazon Linux AMI 2014.09
+      aws.ami = 'ami-4985b048'  # Amazon Linux AMI 2014.09.1
     when 'us-east-1'
       aws.ami = 'ami-b66ed3de'  # Amazon Linux AMI 2014.09.1
     else
